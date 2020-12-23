@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-//#include "stack.h"
+#include "stack.h"
 using namespace std;
 
 struct Node {
@@ -25,6 +25,15 @@ void addStack(Node *&stack, int n){
 void deleteStack(Node *&stack, int &n){
     Node *aux = stack;
     n = aux -> data;
-    pila = aux -> next;
+    stack = aux -> next;
     delete aux;
+}
+
+void menu(void){
+    cout << "---stack methods, what do u want to do?---" << endl;
+    cout << "[1] Create stack" << endl;
+    cout << "[2] Add an element to the stack" << endl;
+    cout << "[3] Delete an element from the stack" << endl;
+    cout << "[99] Exit" << endl; 
+    return;
 }
