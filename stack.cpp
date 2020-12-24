@@ -3,18 +3,18 @@
 #include "stack.h"
 using namespace std;
 
-struct Node {
+struct NodeStack {
     int data;
-    Node *next;
+    NodeStack *next;
 };
 
 void createStack(void){
-    Node *stack = NULL;
-    return;
+    NodeStack *stack = NULL;
+    return
 }
 
-void addStack(Node *&stack, int n){
-    Node *new_node = new Node();
+void addStack(NodeStack *&stack, int n){
+    NodeStack *new_node = new NodeStack();
     new_node -> data = n;
     new_node -> next = stack;
     stack = new_node;
@@ -22,14 +22,14 @@ void addStack(Node *&stack, int n){
     cout << "\n " << n << " added to the stack" << endl;
 }
 
-void deleteStack(Node *&stack, int &n){
-    Node *aux = stack;
+void removeStack(NodeStack *&stack, int &n){
+    NodeStack *aux = stack;
     n = aux -> data;
     stack = aux -> next;
     delete aux;
 }
 
-void menu(void){
+void menuStack(void){
     cout << "---stack methods, what do u want to do?---" << endl;
     cout << "[1] Create stack" << endl;
     cout << "[2] Add an element to the stack" << endl;
