@@ -8,11 +8,6 @@ struct NodeStack {
     NodeStack *next;
 };
 
-void createStack(void){
-    NodeStack *stack = NULL;
-    return
-}
-
 void addStack(NodeStack *&stack, int n){
     NodeStack *new_node = new NodeStack();
     new_node -> data = n;
@@ -31,9 +26,48 @@ void removeStack(NodeStack *&stack, int &n){
 
 void menuStack(void){
     cout << "---stack methods, what do u want to do?---" << endl;
-    cout << "[1] Create stack" << endl;
-    cout << "[2] Add an element to the stack" << endl;
-    cout << "[3] Delete an element from the stack" << endl;
+    cout << "[1] Add an element to the stack" << endl;
+    cout << "[2] Delete an element from the stack" << endl;
     cout << "[99] Exit" << endl; 
-    return;
+}
+
+void mainStack(void){
+    cout << "Creating stack data structure" << endl;
+    NodeStack *stack = NULL;
+    cout << "Stack created succesfully!\n" << endl;
+
+    int res, number;
+
+    while(true){
+        menuStack();
+        cout << "Option: ";
+        cin >> res;
+        switch (res){
+            case 1:
+                cout << "What number do you want to insert: ";
+                cin >> number;
+                addStack(stack, number);
+                cout << "Number: " << number << " added to the stack" << endl;
+                break;
+            case 2:
+                cout << "Removing elements from the stack" << endl;
+                while (stack != NULL){
+                    removeStack(stack, number);
+
+                    if(stack != NULL){
+                        cout << number << ", ";
+                    }
+                    else{
+                        cout << number << '.' << endl;
+                    }
+                }
+                break;
+            case 99:
+                exit(0);
+                break;
+            default:
+                cout << "Introduce a valid option" << endl;
+                continue;
+        }
+    }
 }
