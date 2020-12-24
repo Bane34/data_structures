@@ -7,3 +7,4 @@ void removeQueue(NodeQueue *&, NodeQueue *&, int &);
 
 bool emptyQueue(NodeQueue *);
 void menuQueue(void);
+void mainQueue(void);

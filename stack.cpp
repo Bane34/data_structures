@@ -25,7 +25,7 @@ void removeStack(NodeStack *&stack, int &n){
 }
 
 void menuStack(void){
-    cout << "---stack methods, what do u want to do?---" << endl;
+    cout << "---Stack methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the stack" << endl;
     cout << "[2] Delete an element from the stack" << endl;
     cout << "[99] Exit" << endl; 
@@ -61,6 +61,7 @@ void mainStack(void){
                         cout << number << '.' << endl;
                     }
                 }
+                return;
                 break;
             case 99:
                 exit(0);

@@ -40,7 +40,7 @@ bool emptyQueue(NodeQueue *top){
 }
 
 void menuQueue(void){
-    cout << "---stack methods, what do u want to do?---" << endl;
+    cout << "---Queue methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the queue" << endl;
     cout << "[2] Delete the elements from the queue" << endl;
     cout << "[99] Exit" << endl; 
