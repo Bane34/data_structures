@@ -42,7 +42,7 @@ bool emptyQueue(NodeQueue *top){
 void menuQueue(void){
     cout << "---stack methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the queue" << endl;
-    cout << "[2] Delete an element from the queue" << endl;
+    cout << "[2] Delete the elements from the queue" << endl;
     cout << "[99] Exit" << endl; 
 }
 
@@ -66,10 +66,20 @@ void mainQueue(void){
                 cout << "Number: " << number << " added to the queue";
                 break;
             case 2:
-                cout << "What number do you want to remove: ";
-                cin >> number;
-                removeQueue(top, end, res);
-                cout << "Number: " << number << " added to the queue";
+                cout << "Removing elements from the queue" << endl;
+                while(top != NULL){
+                    removeQueue(top, end, number);
+
+                    if(top != NULL){
+                        cout << number << ", ";
+                    }
+                    else{
+                        cout << number << '.' << endl;
+                    }
+                }
+                break;
+            case 99:
+                exit(0);
                 break;
             default:
                 cout << "Introduce a valid option" << endl;
