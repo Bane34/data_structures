@@ -1,7 +1,7 @@
-OBJS	= main.o stack.o
-SOURCE	= main.cpp stack.cpp
-HEADER	= core.h stack.h
-OUT	= Program
+OBJS	= main.o stack.o queue.o
+SOURCE	= main.cpp stack.cpp queue.cpp
+HEADER	= core.h stack.h queue.h
+OUT	= Data_structures
 CC	 = g++
 FLAGS	 = -g -c -Wall
 LFLAGS	 = 
@@ -14,6 +14,9 @@ main.o: main.cpp
 
 stack.o: stack.cpp
 	$(CC) $(FLAGS) stack.cpp 
+
+queue.o: queue.cpp
+	$(CC) $(FLAGS) queue.cpp 
 
 
 clean:
