@@ -19,6 +19,8 @@ void addQueue(NodeQueue *&top, NodeQueue *&end, int n){
         end -> next = new_node;
 
     end = new_node;
+
+    cout << '\n' << n << " added to the queue" << endl;
 }
 
 void removeQueue(NodeQueue *&top, NodeQueue *&end, int &n){
@@ -40,6 +42,7 @@ bool emptyQueue(NodeQueue *top){
 }
 
 void menuQueue(void){
+    system("cls");
     cout << "---Queue methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the queue" << endl;
     cout << "[2] Delete the elements from the queue" << endl;
@@ -63,7 +66,6 @@ void mainQueue(void){
                 cout << "What number do you want to insert: ";
                 cin >> number;
                 addQueue(top, end, res);
-                cout << "Number: " << number << " added to the queue";
                 break;
             case 2:
                 cout << "Removing elements from the queue" << endl;

@@ -1,9 +1,13 @@
 #include <iostream>
 #include "core.h"
 using namespace std;
+/*****************************************/
+/*          Created by @Bane34           */
+/* Visit me on https://github.com/Bane34 */
+/*****************************************/
 
 void menu(void){
-    cout << "Select a data structure to operate in" << endl;
+    cout << "\nSelect a data structure to operate in" << endl;
     cout << "[1] Stack" << endl;
     cout << "[2] Queue" << endl;
     cout << "[99] Exit" << endl;
@@ -16,6 +20,7 @@ int main(){
         menu();
         cout << ">>";
         cin >> res;
+
         switch(res){
             case 1:
                 mainStack();

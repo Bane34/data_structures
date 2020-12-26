@@ -25,6 +25,7 @@ void removeStack(NodeStack *&stack, int &n){
 }
 
 void menuStack(void){
+    system("cls");
     cout << "---Stack methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the stack" << endl;
     cout << "[2] Delete an element from the stack" << endl;
@@ -47,7 +48,6 @@ void mainStack(void){
                 cout << "What number do you want to insert: ";
                 cin >> number;
                 addStack(stack, number);
-                cout << "Number: " << number << " added to the stack" << endl;
                 break;
             case 2:
                 cout << "Removing elements from the stack" << endl;
