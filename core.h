@@ -5,3 +5,6 @@
 
 //Including the queue files
 #include "queue.h"
+
+//Including the list files
+#include "list.h"
