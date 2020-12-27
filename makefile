@@ -1,6 +1,6 @@
-OBJS	= main.o stack.o queue.o list.o
-SOURCE	= main.cpp stack.cpp queue.cpp list.cpp
-HEADER	= core.h stack.h queue.h list.h
+OBJS	= main.o stack.o queue.o list.o trees.o
+SOURCE	= main.cpp stack.cpp queue.cpp list.cpp trees.cpp
+HEADER	= core.h stack.h queue.h list.h trees.h
 OUT	= Data_structures
 CC	 = g++
 FLAGS	 = -g -c -Wall
@@ -20,6 +20,9 @@ queue.o: queue.cpp
 
 list.o: list.cpp
 	$(CC) $(FLAGS) list.cpp
+
+trees.o: trees.cpp:
+	$(CC) $(FLAGS) trees.cpp
 
 clean:
 	rm -f $(OBJS) $(OUT)

@@ -8,3 +8,6 @@
 
 //Including the list files
 #include "list.h"
+
+//Including the tree files
+#include "trees.h"

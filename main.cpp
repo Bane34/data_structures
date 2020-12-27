@@ -10,6 +10,7 @@ void menu(void){
     cout << "\nSelect a data structure to operate in" << endl;
     cout << "[1] Stack" << endl;
     cout << "[2] Queue" << endl;
+    cout << "[3] List" << endl;
     cout << "[99] Exit" << endl;
 }
 
@@ -18,7 +19,7 @@ int main(){
 
     while (true){
         menu();
-        cout << ">>";
+        cout << ">> ";
         cin >> res;
 
         switch(res){
@@ -28,6 +29,8 @@ int main(){
             case 2:
                 mainQueue();
                 break;
+            case 3:
+                mainList();
             case 99:
                 exit(0);
             default:
