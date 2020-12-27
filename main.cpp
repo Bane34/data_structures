@@ -37,6 +37,7 @@ int main(){
                 break;
             case 99:
                 exit(0);
+                break;
             default:
                 cout << "Select a valid option" << endl;
                 continue;
