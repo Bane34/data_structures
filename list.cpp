@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <conio.h>
 #include "list.h"
 using namespace std;
 
@@ -12,7 +13,7 @@ void addList(NodeList *&list, int n) {
     NodeList *new_node = new NodeList();
     new_node -> data = n;
 
-    NodeList *aux1 = lista;
+    NodeList *aux1 = list;
     NodeList *aux2;
 
     while((aux1 != NULL) && (aux1 -> data < n)){
@@ -21,7 +22,7 @@ void addList(NodeList *&list, int n) {
     }
 
     if (list == aux1)
-        lista = new_node;
+        list = new_node;
     else
         aux2 -> next = new_node;
     
@@ -31,23 +32,28 @@ void addList(NodeList *&list, int n) {
 }
 
 void showList(NodeList *list){
-    Node *actual = new Node();
+    NodeList *actual = new NodeList();
     actual = list;
 
-    while(actual != NULL){
+    do{
+        if(actual -> next == NULL){
+            cout << actual -> data;
+            break;
+        }
+        
         cout << actual -> data << "->";
         actual = actual -> next;
-    }
+    } while(actual != NULL);
 }
 
-void searcList(NodeList *, int n){
+void searchList(NodeList *list, int n){
     bool band = false;
 
     NodeList *actual = new NodeList();
-    actual = lista;
+    actual = list;
 
     while((actual != NULL) && (actual -> data <= n)){
-        if (actual -> dato == n){
+        if (actual -> data == n){
             band = true;
         }
         actual = actual -> next;
@@ -76,29 +82,66 @@ void removeList(NodeList *&list, int n){
         else if (previous == NULL){
             list = list -> next;
             delete aux_remove;
+            cout << n << " removed from the list" << endl;
         }
         else{
             previous -> next = aux_remove -> next;
             delete aux_remove;
+            cout << n << " removed from the list" << endl;
         }
     }
 }
 
-void menu(void){
+void menuList(void){
     system("cls");
-    cout << "---List methods, what do u want to do?---" << endl;
+    cout << "\n---List methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the list" << endl;
     cout << "[2] Delete an element from the list" << endl;
     cout << "[3] Show list" << endl;
     cout << "[4] Search an element in the list" << endl;
-    cout << "[5] Exit" << endl;
+    cout << "[99] Exit" << endl;
 }
 
 void mainList(void){
     cout << "Creating list data structure" << endl;
-    Node *list = NULL;
+    NodeList *list = NULL;
     cout << "Data structure list created" << endl;
 
     int res, number;
 
+    while (true) {
+        menuList();
+        cout << "Option: ";
+        cin >> res;
+
+        switch (res) {
+            case 1:
+                cout << "What number do u want to insert to the list: ";
+                cin >> number;
+                addList(list, number);
+                getch();
+                break;
+            case 2:
+                cout << "What number do u want to remove from the list: ";
+                cin >> number;
+                getch();
+                break;
+            case 3:
+                showList(list);
+                getch();
+                break;
+            case 4:
+                cout << "What number do u want to find: ";
+                cin >> number;
+                searchList(list, number);
+                getch();
+                break;
+            case 99:
+                exit(0);
+            default:
+                cout << "Select a valid option" << endl;
+                getch();
+                continue;
+        }
+    }
 }

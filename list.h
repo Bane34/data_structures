@@ -7,5 +7,5 @@ void showList(NodeList *);
 void searchList(NodeList *, int);
 void removeList(NodeList *&, int);
 
-void menu(void);
+void menuList(void);
 void mainList(void);

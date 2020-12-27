@@ -42,8 +42,7 @@ bool emptyQueue(NodeQueue *top){
 }
 
 void menuQueue(void){
-    system("cls");
-    cout << "---Queue methods, what do u want to do?---" << endl;
+    cout << "\n---Queue methods, what do u want to do?---" << endl;
     cout << "[1] Add an element to the queue" << endl;
     cout << "[2] Delete the elements from the queue" << endl;
     cout << "[99] Exit" << endl; 
@@ -79,6 +78,7 @@ void mainQueue(void){
                         cout << number << '.' << endl;
                     }
                 }
+                return;
                 break;
             case 99:
                 exit(0);
