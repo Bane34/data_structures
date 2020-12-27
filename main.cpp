@@ -31,6 +31,10 @@ int main(){
                 break;
             case 3:
                 mainList();
+                break;
+            case 4:
+                mainTree();
+                break;
             case 99:
                 exit(0);
             default:
