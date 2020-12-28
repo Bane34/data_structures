@@ -99,6 +99,35 @@ void deleteList(NodeList *&list, int &n){
     delete aux;
 }
 
+void getMaxMin(NodeList *list){
+    int max = 0, min = 2^63;
+
+    while(list != NULL){
+        if(list -> data > max)
+            max = list -> data;
+
+        if(list -> data < min)
+            min = list -> data;
+        
+        list = list -> next;
+    }
+
+    // As I know in c++ you cant return to values at the same time >:/ so I have to do this shit
+    cout << "Maximun element: " << max << endl;
+    cout << "Minimun element: " << min << endl;
+}
+
+int getSum(NodeList *list){
+    int sum = 0;
+
+    while (list != NULL){
+        sum = sum + list -> data;
+        list = list -> next;
+    }
+
+    return sum;
+}
+
 void menuList(void){
     system("cls");
     cout << "\n---List methods, what do u want to do?---" << endl;
@@ -107,6 +136,8 @@ void menuList(void){
     cout << "[3] Show list" << endl;
     cout << "[4] Search an element in the list" << endl;
     cout << "[5] Delete the list" << endl;
+    cout << "[6] Search maximun and minimun value in the list" << endl;
+    cout << "[7] Get sum of all the list" << endl;
     cout << "[99] Exit" << endl;
 }
 
@@ -150,6 +181,14 @@ void mainList(void){
                     cout << number << "->";
                     deleteList(list, number);
                 }
+                getch();
+                break;
+            case 6:
+                getMaxMin(list);
+                getch();
+                break;
+            case 7:
+                cout << getSum(list) << endl;
                 getch();
                 break;
             case 99:
