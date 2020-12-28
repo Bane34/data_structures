@@ -16,6 +16,8 @@ struct NodeTree {
 	NodeTree* left;
 };
 
+
+
 NodeTree *createNode(int n){
 	NodeTree *new_node = new NodeTree();
 
@@ -41,7 +43,7 @@ void addTree(NodeTree *&tree, int n){
 }
 
 void showTree(NodeTree *tree, int counter){
-	
+	return;
 }
 
 void menuTree(void) {
@@ -53,6 +55,8 @@ void menuTree(void) {
 }
 
 void mainTree(void) {
+	NodeTree *tree = NULL;
+
 	int res, number;
 
 	while (true){

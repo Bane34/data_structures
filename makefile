@@ -19,10 +19,11 @@ queue.o: queue.cpp
 	$(CC) $(FLAGS) queue.cpp 
 
 list.o: list.cpp
-	$(CC) $(FLAGS) list.cpp
+	$(CC) $(FLAGS) list.cpp 
 
 trees.o: trees.cpp
-	$(CC) $(FLAGS) trees.cpp
+	$(CC) $(FLAGS) trees.cpp 
+
 
 clean:
 	rm -f $(OBJS) $(OUT)
