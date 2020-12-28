@@ -82,14 +82,21 @@ void removeList(NodeList *&list, int n){
         else if (previous == NULL){
             list = list -> next;
             delete aux_remove;
-            cout << n << " removed from the list" << endl;
+            cout << n << " removed" << endl;
         }
         else{
             previous -> next = aux_remove -> next;
             delete aux_remove;
-            cout << n << " removed from the list" << endl;
+            cout << n << " removed" << endl;
         }
     }
+}
+
+void deleteList(NodeList *&list, int &n){
+    NodeList *aux = list;
+    n = aux -> data;
+    list = aux -> next;
+    delete aux;
 }
 
 void menuList(void){
@@ -99,6 +106,7 @@ void menuList(void){
     cout << "[2] Delete an element from the list" << endl;
     cout << "[3] Show list" << endl;
     cout << "[4] Search an element in the list" << endl;
+    cout << "[5] Delete the list" << endl;
     cout << "[99] Exit" << endl;
 }
 
@@ -124,6 +132,7 @@ void mainList(void){
             case 2:
                 cout << "What number do u want to remove from the list: ";
                 cin >> number;
+                removeList(list, number);
                 getch();
                 break;
             case 3:
@@ -134,6 +143,13 @@ void mainList(void){
                 cout << "What number do u want to find: ";
                 cin >> number;
                 searchList(list, number);
+                getch();
+                break;
+            case 5:
+                while (list != NULL) {
+                    cout << number << "->";
+                    deleteList(list, number);
+                }
                 getch();
                 break;
             case 99:
