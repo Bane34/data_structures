@@ -6,6 +6,8 @@ using namespace std;
 
 /*
 * Note: this code is for a search binary tree (ABB)
+* This means that the values higher than the root value will be at the right 
+* And the values lower than the root value will be at the left				 
 */
 
 struct NodeTree {
