@@ -21,7 +21,7 @@ queue.o: queue.cpp
 list.o: list.cpp
 	$(CC) $(FLAGS) list.cpp
 
-trees.o: trees.cpp:
+trees.o: trees.cpp
 	$(CC) $(FLAGS) trees.cpp
 
 clean:
