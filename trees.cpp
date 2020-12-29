@@ -43,7 +43,16 @@ void addTree(NodeTree *&tree, int n){
 }
 
 void showTree(NodeTree *tree, int counter){
-	return;
+	if (tree == NULL)
+		return;
+	else{
+		showTree(tree -> right, counter + 1);
+		for(int i = 0; i < counter; i++)
+			cout << "   ";
+		
+		cout << tree -> data << endl;
+		showTree(tree -> left, counter + 1);
+ 	}
 }
 
 void menuTree(void) {
@@ -51,13 +60,14 @@ void menuTree(void) {
 	cout << "\n---Tree methods, what do u want to do?" << endl;
 	cout << "[1] Insert an element to the tree" << endl;
 	cout << "[2] Remove an element from the tree" << endl;
+	cout << "[3] Show the tree" << endl;
 	cout << "[99] Exit" << endl;
 }
 
 void mainTree(void) {
 	NodeTree *tree = NULL;
 
-	int res, number;
+	int res, number, count = 0;
 
 	while (true){
 		menuTree();
@@ -70,6 +80,12 @@ void mainTree(void) {
 				cin >> number;
 				addTree(tree, number);
 				cout << number << " added to the tree" << endl;
+				getch();
+				break;
+			case 2:
+				break;
+			case 3:
+				showTree(tree, count);
 				getch();
 				break;
 			case 99:
