@@ -40,6 +40,10 @@ void addTree(NodeTree *&tree, int n){
 	}
 }
 
+void removeTree(NodeTree *&tree, int n){
+	return;
+}
+
 void showTree(NodeTree *tree, int counter){
 	if (tree == NULL)
 		return;
@@ -64,6 +68,28 @@ bool searchTree(NodeTree *tree, int n){
 		return searchTree(tree -> right, n);
 }
 
+void preOrder(NodeTree *tree){
+	//First we start in the root node, then we go to the left, and eventually, the right
+	if(tree == NULL)
+		return;
+	else{
+		cout << tree -> data << " - ";
+		preOrder(tree -> left);
+		preOrder(tree -> right);
+	}
+}
+
+void inOrder(NodeTree *tree){
+	//First we start at the left, then we continue to the root node, and finally we display the right nodes
+	if(tree == NULL)
+		return;
+	else{
+		inOrder(tree -> left);
+		cout << tree -> data << " - ";
+		inOrder(tree -> right);
+	}
+}
+
 void menuTree(void) {
 	system("cls");
 	cout << "\n---Tree methods, what do u want to do?" << endl;
@@ -71,6 +97,8 @@ void menuTree(void) {
 	cout << "[2] Remove an element from the tree" << endl;
 	cout << "[3] Show the tree" << endl;
 	cout << "[4] Find an element in the tree" << endl;
+	cout << "[5] Traverse the tree in preOrder" << endl;
+	cout << "[6] Traverse the tree in inOrder" << endl;
 	cout << "[99] Exit" << endl;
 }
 
@@ -105,6 +133,16 @@ void mainTree(void) {
 					cout << number << " found in the tree" << endl;
 				else
 					cout << number << " not found in the tree" << endl;
+				getch();
+				break;
+			case 5:
+				cout << "\nPath preOrder:" << endl;
+				preOrder(tree);
+				getch();
+				break;
+			case 6:
+				cout << "\nPath inOrder" << endl;
+				inOrder(tree);
 				getch();
 				break;
 			case 99:
