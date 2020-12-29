@@ -97,8 +97,8 @@ void menuTree(void) {
 	cout << "[2] Remove an element from the tree" << endl;
 	cout << "[3] Show the tree" << endl;
 	cout << "[4] Find an element in the tree" << endl;
-	cout << "[5] Traverse the tree in preOrder" << endl;
-	cout << "[6] Traverse the tree in inOrder" << endl;
+	cout << "[5] Go trhough the tree in pre order" << endl;
+	cout << "[6] Go trhough the tree in order" << endl;
 	cout << "[99] Exit" << endl;
 }
 
