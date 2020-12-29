@@ -11,6 +11,7 @@ void menu(void){
     cout << "[1] Stack" << endl;
     cout << "[2] Queue" << endl;
     cout << "[3] List" << endl;
+    cout << "[4] Tree" << endl;
     cout << "[99] Exit" << endl;
 }
 
