@@ -186,6 +186,12 @@ void mainTree(void) {
 				getch();
 				break;
 			case 2:
+				cout << "What number do u want to remove";
+				cin >> number;
+				if (searchTree(tree, number))
+					removeTree(tree, number);
+				else
+					cout << n << " not found in the tree" << endl;
 				break;
 			case 3:
 				showTree(tree, count);
