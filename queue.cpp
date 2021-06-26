@@ -65,6 +65,7 @@ void mainQueue(void){
                 cout << "What number do you want to insert: ";
                 cin >> number;
                 addQueue(top, end, number);
+                system("cls");
                 break;
             case 2:
                 cout << "Removing elements from the queue" << endl;

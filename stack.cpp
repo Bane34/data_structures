@@ -47,6 +47,7 @@ void mainStack(void){
                 cout << "What number do you want to insert: ";
                 cin >> number;
                 addStack(stack, number);
+                system("cls");
                 break;
             case 2:
                 cout << "Removing elements from the stack" << endl;
