@@ -191,7 +191,7 @@ void mainTree(void) {
 				if (searchTree(tree, number))
 					removeTree(tree, number);
 				else
-					cout << n << " not found in the tree" << endl;
+					cout << number << " not found in the tree" << endl;
 				break;
 			case 3:
 				showTree(tree, count);
