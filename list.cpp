@@ -178,10 +178,15 @@ void mainList(void){
                 break;
             case 5:
                 while (list != NULL) {
-                    cout << number << "->";
+                    if(list->next != NULL)
+                        cout << list->data << "->";
+                    else
+                        cout << list->data << endl;
+                    
                     deleteList(list, number);
                 }
                 getch();
+                return;
                 break;
             case 6:
                 getMaxMin(list);
